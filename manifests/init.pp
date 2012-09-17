@@ -13,12 +13,14 @@
 # [Remember: No empty lines between comments and class definition]
 class logster {
 
-
-  package { "logster":
-    ensure => present;
-  "logcheck":
-    ensure => present;
+  package {
+    'logster':
+      ensure => present,
   }
 
+  package {
+    'logcheck':
+      ensure => present,
+  }
 
 }
