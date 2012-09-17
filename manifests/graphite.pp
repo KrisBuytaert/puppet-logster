@@ -20,11 +20,16 @@
 #
 # TODO: Update documentation
 #
-define logster::graphite ($host = '',$type ='SampleLogster',$file,$prefix) {
+define logster::graphite (
+  $file,
+  $prefix,
+  $host = '',
+  $port = '2003',
+  $type ='SampleLogster') {
 
   cron { "cron-${name}":
     ensure  => present,
-    command => "/usr/sbin/logster --output=graphite --graphite-host=${host}:2003 ${type} ${file} -p ${prefix}  > /dev/null 2>&1",
+    command => "/usr/sbin/logster --output=graphite --graphite-host=${host}:${port} ${type} ${file} -p ${prefix}  > /dev/null 2>&1",
     user    => 'root',
     minute  => '*',
   }
