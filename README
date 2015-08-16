@@ -1,3 +1,7 @@
 logster
 
-This is the logster module.
+This was the logster module.
+
+This module is deprecated and will not get further updates.
+
+We recommend you to use the ELK stack as a replacement for logster.
